@@ -1,3 +1,3 @@
 function noThing() {
-  alert("This Website Is Not Available")
+  alert("This Page Is Not Available")
 }
