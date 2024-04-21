@@ -17,12 +17,12 @@
   transform: translateY(5vw);
   justify-content: space-around;
 }
-.iconlink span {
+.iconlink i {
   color: #2694D0;
   font-size: 1.7rem;
   cursor: grab;
 }
-.iconlink span:hover {
+.iconlink i:hover {
   text-decoration: 3px underline solid;
 }
 @media only screen and (min-width: 900px) {
