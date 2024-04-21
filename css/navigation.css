@@ -14,7 +14,7 @@
 .iconlink {
   display: flex;
   position: relative;
-  transform: translateY(7vw);
+  transform: translateY(5vw);
   justify-content: space-around;
 }
 .iconlink span {
@@ -38,8 +38,7 @@
     height: 10vw;
     margin-left: 0;
     border-radius: 0;
-    background: black;
-    opacity: 0.7;
+    background: none;
   }
   .link {
     float: right;
