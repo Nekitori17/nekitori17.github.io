@@ -49,9 +49,9 @@
     align-content: center;
   }
   .link a {
-    margin-left: 20px;
+    margin-left: 15px;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .title {
     position: absolute;
@@ -60,11 +60,12 @@
     transform: translateY(-50%);
   }
   .title img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
   .title h1 {
     align-content: center;
     margin-left: 10px;
+    font-size: 1.5rem
   }
 }
