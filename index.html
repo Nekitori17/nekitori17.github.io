@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +10,27 @@
   <title>Nekitori17 - Home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="/css/navigation.css">
-  <link rel="stylesheet" href="css/var.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+  <link rel="stylesheet" href="/css/var.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+  <div id="particles-js"></div>
   <div class="header">
     <div class="title">
       <img src="/favicon.ico" alt="logo.img">
       <h1>Nekitori17 - Home</h1>
     </div>
     <div class="navigation">
-      <div class="iconlink" translate="no" onclick="noThing()">
-        <a href="/"><i class="fa-solid fa-house-chimney"></i></a>
+      <div class="iconlink" translate="no">
+        <a href=""><i class="fa-solid fa-house-chimney"></i></a>
         <a href="/blog"><i class="fa-regular fa-newspaper"></i></a>
         <a href="/project"><i class="fa-solid fa-diagram-project"></i></a>
         <a href="/about"><i class="fa-solid fa-address-card"></i></a>
       </div>
       <nav class="link">
-        <a href="/">Home</a>
+        <a href="">Home</a>
         <a href="/blog">Blog</a>
         <a href="/project">Project</a>
         <a href="/about">About</a>
@@ -35,14 +38,56 @@
     </div>
   </div>
   <div class="container">
-    
+    <div class="card">
+      <div class="heading">
+        <img class="card-background" src="/assets/image/card-background.png" alt="background.png" />
+        <img class="avatar" src="/assets/image/avatar.png" alt="avatar.png" />
+        <h1>Nekitori Hakari</h1>
+        <p>Front-End Developer</p>
+      </div>
+      <article>
+        <div class="icon-text">
+          <i class="fa-solid fa-genderless"></i>
+          <span> Male</span>
+        </div>
+        <div class="icon-text">
+          <i class="fa-solid fa-cake-candles"></i>
+          <span> September, 2009</span>
+        </div>
+        <div class="icon-text">
+          <i class="fa-solid fa-location-dot"></i>
+          <span> Dak Lak, Vietnam</span>
+        </div>
+        <div class="icon-text">
+          <i class="fa-regular fa-clock"></i>
+          <span class="time-current"></span>
+        </div>
+      </article>
+      <div class="social-media" translate="no">
+        <div class="facebook">
+          <p class="tooltip">Nekitori Hakari</p>
+          <a href="https://www.facebook.com/nekitorihakari"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="youtube">
+          <p class="tooltip">Nekitori17</p>
+          <a href="https://youtube.com/@plinkatsu"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="discord">
+          <p class="tooltip">nekitorihakari</p>
+          <a href="https://discord.com/users/1032626223307829289"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="github">
+          <p class="tooltip">Nekitori17</p>
+          <a href="https://github.com/Nekitori17"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
-  <footer>
-    <p class="copyright">Nekitori Hakari. 2023 - Present<p/>
-  </footer>
 </body>
 <script src="/js/main.js"></script>
-<script src="script.js"></script>
+<script src="/script.js"></script>
+<script src="/lib/particles.js"></script>
 <script src="https://kit.fontawesome.com/3980c9da39.js" crossorigin="anonymous"></script>
 <noscript>Ohh no. Your Browser Not Support JavaScript.Bruhhh</noscript>
+
 </html>

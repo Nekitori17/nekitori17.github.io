@@ -6,7 +6,8 @@
   width: 90%;
   height: 8%;
   border-radius: 20px;
-  z-index: 5;
+  z-index: 100;
+  transition: bottom 0.8s
 }
 .title, .link {
   display: none;
@@ -39,6 +40,7 @@
     margin-left: 0;
     border-radius: 0;
     background: none;
+    transition: none
   }
   .link {
     float: right;

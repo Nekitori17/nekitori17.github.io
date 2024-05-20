@@ -1,16 +1,202 @@
-footer {
-  background: #141847;
-  width: 100%;
-  height: 3%;
-  position: absolute;
-  top: 200%;
-}
-footer .copyright {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%)
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Quicksand:wght@300..700&display=swap');
+
 body {
-  height: 150vh;
+  height: 100vw;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 50px 2px black;
+  backdrop-filter: blur(2px);
+  background: rgba(32, 35, 41, 0.2);
+  z-index: 1;
+  transition: all 0.5 ease;
+  animation: openContainer 1s ease forwards;
+}
+.heading {
+  opacity: 0;
+  animation: showingUp 0.8s 0.8s ease forwards;
+  transition: all 0.5 ease;
+}
+.heading .card-background {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  filter: brightness(0.7);
+  object-fit: cover;
+}
+
+.heading .avatar {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 2px solid royalblue;
+  box-shadow: 0 0 5px 2px skyblue;
+}
+
+.heading h1 {
+  position: relative;
+  top: 60px;
+  text-align: center;
+  font-size: 1.7rem;
+  color: #7EA4FF;
+  font-family: "Quicksand";
+}
+
+.heading p {
+  position: relative;
+  top: 65px;
+  text-align: center;
+  font-family: "Electrolize"
+}
+
+article {
+  position: relative;
+  top: 100px;
+  line-height: 35px;
+  text-align: center;
+  opacity: 0;
+  animation: showingUp 0.8s 1s ease forwards;
+  transition: all 0.5 ease;
+}
+
+article i {
+  color: #4BA4FF;
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.social-media {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: flex;
+  background: #5F89B3;
+  width: 100%;
+  height: 120px;
+  rotate: -2.5deg;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  animation: showingUp 0.8s 1.2s ease forwards;
+  transition: all 0.5 ease;
+}
+
+.social-media::before {
+  content: "";
+  background: #5F89B3;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -2.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  rotate: 45deg;
+}
+
+.social-media i {
+  color: #2AD5E3;
+  font-size: 1.5rem;
+}
+
+.tooltip {
+  background: #2B2B2B;
+  rotate: 2.5deg;
+  position: absolute;
+  top: -5%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  height: 30px;
+  padding: 0 5px 0 5px;
+  border-radius: 5px;
+  transition: all 2s ease;
+  opacity: 0;
+}
+.facebook .tooltip {
+  left: 7.5%;
+}
+.youtube .tooltip {
+  left: 32.5%;
+}
+.discord .tooltip {
+  left: 52.5%;
+}
+.github .tooltip {
+  left: 75%;
+}
+.facebook:hover .tooltip {
+  animation: popUpToolTip 0.5s ease forwards;
+}
+.youtube:hover .tooltip {
+  animation: popUpToolTip 0.5s ease forwards;
+}
+.discord:hover .tooltip {
+  animation: popUpToolTip 0.5s ease forwards;
+}
+.github:hover .tooltip {
+  animation: popUpToolTip 0.5s ease forwards;
+}
+.social-media .tooltip::before {
+  z-index: 1;
+  content: "";
+  background: linear-gradient(-45deg, rgba(43, 43, 43, 1) 50%, transparent 50%);;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  rotate: 45deg;
+  left: 50%;
+  bottom: -40%;
+  transform: translateX(-50%)
+}
+@keyframes popUpToolTip {
+  0% {
+    opacity: 0;
+    transform: translateY(20%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%)
+  }
+}
+@keyframes showingUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes openContainer {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 700px;
+  }
+}
+#particles-js {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    top: 40vw;
+  }
 }
