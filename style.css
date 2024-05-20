@@ -199,4 +199,11 @@ article i {
   .card {
     top: 40vw;
   }
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: calc(100vw + 100vw);
+    top: 0;
+    bottom: 0;
+  }
 }
