@@ -121,32 +121,37 @@ article i {
   height: 30px;
   padding: 0 5px 0 5px;
   border-radius: 5px;
-  transition: all 2s ease;
+  transition: all 0.5s ease;
+  transform: translateY(10%);
   opacity: 0;
 }
 .facebook .tooltip {
-  left: 7.5%;
+  left: 8%;
 }
 .youtube .tooltip {
-  left: 32.5%;
+  left: 32%;
 }
 .discord .tooltip {
-  left: 52.5%;
+  left: 51%;
 }
 .github .tooltip {
   left: 75%;
 }
 .facebook:hover .tooltip {
-  animation: popUpToolTip 0.5s ease forwards;
+  transform: translateY(0);
+  opacity: 1;
 }
 .youtube:hover .tooltip {
-  animation: popUpToolTip 0.5s ease forwards;
+  transform: translateY(0);
+  opacity: 1;
 }
 .discord:hover .tooltip {
-  animation: popUpToolTip 0.5s ease forwards;
+  transform: translateY(0);
+  opacity: 1;
 }
 .github:hover .tooltip {
-  animation: popUpToolTip 0.5s ease forwards;
+  transform: translateY(0);
+  opacity: 1;
 }
 .social-media .tooltip::before {
   z-index: 1;
@@ -159,16 +164,6 @@ article i {
   left: 50%;
   bottom: -40%;
   transform: translateX(-50%)
-}
-@keyframes popUpToolTip {
-  0% {
-    opacity: 0;
-    transform: translateY(20%)
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%)
-  }
 }
 @keyframes showingUp {
   0% {
