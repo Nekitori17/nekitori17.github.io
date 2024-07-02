@@ -126,16 +126,16 @@ article i {
   opacity: 0;
 }
 .facebook .tooltip {
-  left: 8%;
+  left: 6%;
 }
 .youtube .tooltip {
-  left: 32%;
+  left: 31%;
 }
 .discord .tooltip {
-  left: 51%;
+  left: 50%;
 }
 .github .tooltip {
-  left: 75%;
+  left: 74.5%;
 }
 .facebook:hover .tooltip {
   transform: translateY(0);
