@@ -15,6 +15,10 @@ window.onscroll = () => {
   }
 };
 
+const contextTimeout = setTimeout(() => {
+  document.querySelector(".loader-container .context-timeout").style.visibility = "visible";
+}, 5000)
+
 function loadPage(pageSrc) {
   const loaderContainer = document.querySelector(".loader-container");
   loaderContainer.style.background = "transparent";
@@ -34,6 +38,7 @@ function loadPage(pageSrc) {
     if (this.readyState == 4) {
       if (this.status == 200) {
         document.querySelector(".container").innerHTML = this.responseText;
+        clearTimeout(contextTimeout);
         loaderContainer.style.display = "none";
         sessionStorage.setItem("pageSrcSession", pageSrc);
       } else if (this.status == 404) {
@@ -50,9 +55,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   await particlesJS.load("particles-js", "/assets/config/particles.json", () => {
     console.log("callback - particles.js config loaded");
   });
-
-  document.querySelector(".loader-container").style.display = "none";
-
+  
   const pageSrcSession = sessionStorage.getItem("pageSrcSession");
   if (pageSrcSession) {
     const sessionPage = pageSrcSession.split("/")[2];

@@ -29,14 +29,19 @@ body {
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  flex-direction: column;
 }
 
-.loader {
+.loader-container .loader {
   width: 50px;
   height: 50px;
   background-color: #FF5C35;
   animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+.loader-container .context-timeout {
+  padding: 25px;
+  visibility: hidden;
 }
 
 @keyframes spin {
