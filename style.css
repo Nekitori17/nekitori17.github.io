@@ -3,13 +3,14 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
-  color: white;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Saira";
+  font-family: "Saira", sans-serif;
   background: var(--color-background);
+  color: white;
+  height: 150dvh;
 }
 
 #particles-js {
@@ -18,7 +19,6 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  margin: 0;
 }
 
 .loader-container {
@@ -39,6 +39,7 @@ body {
   background-color: #FF5C35;
   animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
+
 .loader-container .context-timeout {
   padding: 25px;
   visibility: hidden;
