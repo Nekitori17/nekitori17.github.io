@@ -11,9 +11,45 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="/css/navigation_bar.css">
   <link rel="stylesheet" href="/css/var.css">
-  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    .loader-container {
+      background: var(--color-background);
+      z-index: 110;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .loader-container .loader {
+      width: 50px;
+      height: 50px;
+      background-color: #FF5C35;
+      animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    }
+
+    .loader-container .context-timeout {
+      padding: 25px;
+      visibility: hidden;
+    }
+
+    @keyframes spin {
+
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+
+      50% {
+        transform: scale(0.5) rotate(180deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -29,24 +65,23 @@
     </div>
     <div class="navigation">
       <div class="iconlink" translate="no">
-        <a class="btn-nav home" onclick="loadPage('/pages/home/index.html')"><i class="fa-solid fa-house-chimney"></i></a>
-        <a class="btn-nav skill" onclick="loadPage('/pages/skill/index.html')"><i class="fa-solid fa-code"></i></a>
-        <a class="btn-nav project" onclick="loadPage('/pages/project/index.html')"><i class="fa-solid fa-diagram-project"></i></a>
-        <a class="btn-nav about" onclick="loadPage('/pages/about/index.html')"><i class="fa-solid fa-address-card"></i></a>
+        <a class="home" data-url="/pages/home/index.html"><i class="fa-solid fa-house-chimney"></i></a>
+        <a class="skill" data-url="/pages/skill/index.html"><i class="fa-solid fa-code"></i></a>
+        <a class="project" data-url="/pages/project/index.html"><i class="fa-solid fa-diagram-project"></i></a>
+        <a class="about" data-url="/pages/about/index.html"><i class="fa-solid fa-address-card"></i></a>
       </div>
       <nav class="link">
-        <a onclick="loadPage('/pages/home/index.html')">Home</a>
-        <a onclick="loadPage('/pages/skill/index.html')">Skill</a>
-        <a onclick="loadPage('/pages/project/index.html')">Project</a>
-        <a onclick="loadPage('/pages/about/index.html')">About</a>
+        <a class="home" data-url="/pages/home/index.html">Home</a>
+        <a class="skill" data-url="/pages/skill/index.html">Skill</a>
+        <a class="project" data-url="/pages/project/index.html">Project</a>
+        <a class="about" data-url="/pages/about/index.html">About</a>
       </nav>
     </div>
   </div>
   <div class="container"></div>
 </body>
-<script async type="text/javascript" src="cdn_modules/particles.js@2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="cdn_modules/particles.js@2.0.0/particles.min.js"></script>
 <script src="app.js"></script>
-<script src="/js/main.js"></script>
 <noscript>Ohh no. Your Browser Not Support JavaScript.Bruhhh</noscript>
 
 </html>

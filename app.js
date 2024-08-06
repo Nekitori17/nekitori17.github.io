@@ -11,11 +11,16 @@ window.onscroll = () => {
   }
 };
 
-const contextTimeout = setTimeout(() => {
+const CONNECTION_TIMEOUT = 5000;
+var contextTimeout = setTimeout(() => {
   document.querySelector(".loader-container .context-timeout").style.visibility = "visible";
-}, 5000);
+}, CONNECTION_TIMEOUT);
 
 function loadPage(pageSrc) {
+  var contextTimeout = setTimeout(() => {
+    document.querySelector(".loader-container .context-timeout").style.visibility = "visible";
+  }, CONNECTION_TIMEOUT);
+
   const loaderContainer = document.querySelector(".loader-container");
   loaderContainer.style.cssText = "background: transparent; z-index: 90; display: flex;";
 
@@ -26,21 +31,19 @@ function loadPage(pageSrc) {
   document.title = `Nekitori17 - ${headerTitle}`;
   document.querySelector(".title h1").innerText = `Nekitori17 - ${headerTitle}`;
 
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState === 4) {
-      if (this.status === 200) {
-        document.querySelector(".container").innerHTML = this.responseText;
-        clearTimeout(contextTimeout);
-        loaderContainer.style.display = "none";
-        sessionStorage.setItem("pageSrcSession", pageSrc);
-      } else if (this.status === 404) {
-        window.location = "/error_pages/404.html";
+  fetch(pageSrc)
+    .then(res => {
+      if (res.status == 404) {
+        window.location = "404.html";
       }
-    }
-  };
-  xhttp.open("GET", pageSrc, true);
-  xhttp.send();
+      return res.text();
+    })
+    .then(htmlText => {
+      document.querySelector(".container").innerHTML = htmlText;
+      clearTimeout(contextTimeout);
+      loaderContainer.style.display = "none";
+      sessionStorage.setItem("pageSrcSession", pageSrc);
+    })
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -48,24 +51,27 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.log("callback - particles.js config loaded");
   });
 
+  clearTimeout(contextTimeout);
+
   const pageSrcSession = sessionStorage.getItem("pageSrcSession");
   if (pageSrcSession) {
     const sessionPage = pageSrcSession.split("/")[2];
-    document.querySelector(`.${sessionPage}`).classList.add("active");
+    document.querySelector(`.navigation .${sessionPage}`).classList.add("active");
     loadPage(pageSrcSession);
   } else {
-    document.querySelector(".home").classList.add("active");
+    document.querySelector(".navigation .home").classList.add("active");
     loadPage("/pages/home/index.html");
   }
 });
 
-const btnNavs = document.querySelectorAll(".btn-nav");
+const linkNavs = document.querySelectorAll(".navigation a");
 
-btnNavs.forEach(item => {
+linkNavs.forEach(item => {
   item.addEventListener("click", event => {
-    btnNavs.forEach(element => {
+    linkNavs.forEach(element => {
       element.classList.remove("active");
     });
     event.currentTarget.classList.add("active");
+    loadPage(event.currentTarget.dataset.url)
   });
 });
