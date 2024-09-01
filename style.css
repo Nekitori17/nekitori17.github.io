@@ -30,6 +30,7 @@ body {
   font-family: "Electrolize", Arial, sans-serif;
   transition: all 0.2s;
   z-index: 100;
+  user-select: none
 }
 
 .navigation {
@@ -54,7 +55,7 @@ body {
 }
 
 .navigation .active {
-  background: linear-gradient(to right, #04FF35, #0480FF);
+  background: linear-gradient(to right, #04FF35, #0C91FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: translateY(-50%) scale(1.25);
@@ -64,7 +65,7 @@ body {
   body {
     background-size: 50%;
   }
-  
+
   .header {
     display: flex;
     top: 0;
@@ -96,7 +97,6 @@ body {
   }
 
   .navigation {
-    width: 400px;
     display: flex;
     align-items: center;
     position: absolute;
@@ -105,9 +105,8 @@ body {
   }
 
   .navigation a {
-    color: dodgerblue;
     font-size: 1.5rem;
-    transition: all 0.25s ease-in;
+    margin-left: 30px
   }
 
   .navigation a i {
@@ -115,10 +114,7 @@ body {
   }
 
   .navigation .active {
-    background: linear-gradient(to right, #04FF35, #0480FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: none;
+    transform: scale(1.05);
   }
 }
 
@@ -126,6 +122,7 @@ body {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 200px 200px;
   }
