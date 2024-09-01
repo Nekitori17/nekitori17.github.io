@@ -9,79 +9,26 @@
   <meta name="keywords" content="Neki, Nekitori17, Neko, Hikari, Hakari, Nekitori Hakari">
   <title>Nekitori17</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="/css/navigation_bar.css">
-  <link rel="stylesheet" href="/css/var.css">
+  <link rel="stylesheet" href="var.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <style>
-    .loader-container {
-      background: var(--color-background);
-      z-index: 110;
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .loader-container .loader {
-      width: 50px;
-      height: 50px;
-      background-color: #FF5C35;
-      animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-    }
-
-    .loader-container .context-timeout {
-      padding: 25px;
-      visibility: hidden;
-    }
-
-    @keyframes spin {
-
-      0%,
-      100% {
-        transform: scale(1) rotate(0deg);
-      }
-
-      50% {
-        transform: scale(0.5) rotate(180deg);
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="loader-container">
-    <div class="loader"></div>
-    <p class="context-timeout">Refresh (F5). If the page can't load</p>
-  </div>
-  <div id="particles-js"></div>
-  <div class="header">
+  <header class="header">
     <div class="title">
       <img src="/favicon.ico" alt="logo.img">
       <h1>Nekitori17</h1>
     </div>
-    <div class="navigation">
-      <div class="iconlink" translate="no">
-        <a class="home" data-url="/pages/home/index.html"><i class="fa-solid fa-house-chimney"></i></a>
-        <a class="skill" data-url="/pages/skill/index.html"><i class="fa-solid fa-code"></i></a>
-        <a class="project" data-url="/pages/project/index.html"><i class="fa-solid fa-diagram-project"></i></a>
-        <a class="about" data-url="/pages/about/index.html"><i class="fa-solid fa-address-card"></i></a>
-      </div>
-      <nav class="link">
-        <a class="home" data-url="/pages/home/index.html">Home</a>
-        <a class="skill" data-url="/pages/skill/index.html">Skill</a>
-        <a class="project" data-url="/pages/project/index.html">Project</a>
-        <a class="about" data-url="/pages/about/index.html">About</a>
-      </nav>
-    </div>
-  </div>
+    <nav class="navigation">
+      <a class="home">.home(<i class="fa-solid fa-house-chimney"></i>)</a>
+      <a class="skill">.skill(<i class="fa-solid fa-code"></i>)</a>
+      <a class="project">.project(<i class="fa-solid fa-diagram-project"></i>)</a>
+    </nav>
+  </header>
   <div class="container"></div>
 </body>
-<script type="text/javascript" src="cdn_modules/particles.js@2.0.0/particles.min.js"></script>
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 <noscript>Ohh no. Your Browser Not Support JavaScript.Bruhhh</noscript>
 
 </html>
