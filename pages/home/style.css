@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+section {
+  color: white;
+  top: 5vh;
+}
+
+.opening {
+  height: 100px;
+  width: 85vw;
+  border-left: 10px solid #39FFD5;
+  left: 30px;
+  top: 50px;
+  position: relative;
+  display: flex;
+  align-items: center
+}
+
+.user {
+  margin-left: 10px;
+  position: relative
+}
+
+.user .name {
+  font-family: "JetBrains Mono", monospace;
+  color: #4CFFCF;
+  font-size: 1.8rem
+}
+
+
+.user .username {
+  font-family: "Quicksand", sans-serif;
+  color: #4CFFF6;
+  opacity: 0.7;
+  font-size: 1rem
+}
+
+.user .currentjob {
+  font-family: "Electrolize", sans-serif;
+}
+
+.opening .avatar {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 90px;
+  box-shadow: 0 0 5px 0 #FF8C4C;
+  border-radius: 15px;
+}
+
+.userinfo {
+  position: relative;
+  top: 100px;
+  left: 25px;
+  height: 50vh;
+  width: 80vw;
+}
+
+.userinfo .text-marquee {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #27FFE8;
+  position: absolute;
+  width: 80%;
+  height: 20px;
+  overflow: hidden;
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+}
+
+.userinfo .text-marquee p {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: bold;
+  color: black;
+  white-space: nowrap;
+  padding: 0 2rem 0 2rem;
+  letter-spacing: 1px;
+  animation: move-rtl 1000ms linear infinite;
+}
+
+.userinfo table {
+  border-collapse: collapse;
+  position: absolute;
+  top: 3.5vh;
+  left: 20%;
+}
+
+.userinfo table td {
+  padding: 3% 20px 3% 0;
+  font-family: "Electrolize", sans-serif;
+}
+
+.userinfo table td i {
+  color: #61E2D4;
+  font-size: 1.2rem
+}
+
+
+.userinfo table td a {
+  color: #27D4C2;
+  text-decoration: none
+}
+
+.linksocial {
+  position: relative;
+  left: 50%;
+  top: 2.5vh;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 5vh;
+  display: flex;
+  padding-bottom: 30px;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 5px solid #24FFC8;
+}
+
+.linksocial div:hover > .tooltip {
+  transform: translate(-32.5%, -230%);
+  opacity: 1;
+}
+
+.linksocial .tooltip {
+  position: absolute;
+  transform: translate(-32.5%, -100%);
+  opacity: 0;
+  background: #3D3D3D;
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 0.2s ease-out
+}
+
+.linksocial .tooltip::before {
+  content: "";
+  position: absolute;
+  background: #3D3D3D;
+  width: 10px;
+  height: 10px;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg)
+}
+
+.linksocial a {
+  color: #56FFF6;
+  font-size: 1.5rem;
+  font-size: "Quicksand", sans-serif
+}
+
+@keyframes move-rtl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  
+}

@@ -15,6 +15,16 @@ body {
   animation: moveBackground 1s linear infinite forwards;
 }
 
+div.container {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.67, 0, 0.37, 0);
+}
+
+section.container {
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+  position: relative;
+}
 
 .title {
   display: none;
