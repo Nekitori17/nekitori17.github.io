@@ -146,7 +146,8 @@ section {
 .linksocial a {
   color: #56FFF6;
   font-size: 1.5rem;
-  font-size: "Quicksand", sans-serif
+  font-size: "Quicksand", sans-serif;
+  user-select: none
 }
 
 @keyframes move-rtl {

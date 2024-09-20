@@ -45,17 +45,21 @@ window.onscroll = () => {
 };
 
 const defaultPage = "home";
-let isButtonOrStartPageEvent = true;
 
 window.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hash) {
+    const pageName = window.location.hash.slice(1)
+    document.querySelector(`.navigation .${pageName}`).classList.add("active");
+    return loadPage(pageName)
+  }
   const pageSession = sessionStorage.getItem("pageSession");
   if (pageSession) {
     document.querySelector(`.navigation .${pageSession}`).classList.add("active");
-    loadPage(pageSession);
-  } else {
-    document.querySelector(`.navigation .${defaultPage}`).classList.add("active");
-    loadPage(defaultPage);
+    window.location.hash = pageSession
   }
+
+  document.querySelector(`.navigation .${defaultPage}`).classList.add("active");
+  window.location.hash = defaultPage
 });
 
 const linkNavs = document.querySelectorAll(".navigation a");
@@ -63,7 +67,6 @@ const linkNavs = document.querySelectorAll(".navigation a");
 linkNavs.forEach(item => {
   item.addEventListener("click", event => {
     const pageName = event.currentTarget.classList[0];
-
     if (window.location.hash.slice(1) === pageName) return;
 
     linkNavs.forEach(element => {
@@ -71,15 +74,11 @@ linkNavs.forEach(item => {
     });
     event.currentTarget.classList.add("active");
 
-    isButtonOrStartPageEvent = true;
-    loadPage(pageName);
+    window.location.hash = pageName
   });
 });
 
 window.addEventListener('hashchange', () => {
-  if (isButtonOrStartPageEvent) return;
-
-
   const pageName = window.location.hash.slice(1);
 
   linkNavs.forEach(element => {
@@ -95,8 +94,6 @@ async function loadPage(pageName) {
   const containerContent = document.querySelector("div.container");
 
   containerContent.style.cssText = "transform: translateY(50%); opacity: 0";
-
-  window.location.hash = pageName;
 
   const headerTitle = `Nekitori17 - ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`;
   document.title = headerTitle;
@@ -135,28 +132,16 @@ async function loadPage(pageName) {
       document.querySelector("section.container").style.animationPlayState = "running";
     }, 500)
 
-    async function loadScripts() {
-      const pageScripts = containerContent.querySelectorAll('script[type="module"]');
-      const promises = Array.from(pageScripts).map(script => {
-        return new Promise((resolve) => {
-          const newScript = document.createElement("script");
-          newScript.setAttribute("src", script.src);
-          newScript.setAttribute("type", "module");
-          newScript.onload = resolve;
-          document.head.append(newScript);
-        });
-      });
+    const pageScript = containerContent.querySelectorAll("script")
+    for (const script of pageScript) {
+      const newScript = document.createElement("script")
+      newScript.setAttribute("src", script.src)
+      newScript.setAttribute("type", script.type || "text/javascript")
+      newScript.setAttribute("data-auto-loaded", "true")
 
-      await Promise.all(promises);
+      document.body.appendChild(newScript)
     }
-
-    loadScripts().then(() => {
-      pageMainScript();
-    });
-
-  }, 500);
-
-  isButtonOrStartPageEvent = false;
+  }, 500)
   sessionStorage.setItem("pageSession", pageName);
 }
 

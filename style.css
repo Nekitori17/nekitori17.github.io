@@ -34,7 +34,7 @@ section.container {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 8vh;
+  height: 10vh;
   background: transparent;
   backdrop-filter: blur(2.5px);
   font-family: "Electrolize", Arial, sans-serif;
